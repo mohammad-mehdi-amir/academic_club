@@ -6,11 +6,16 @@ class Event(models.Model):
     description = models.TextField()
     date = models.DateTimeField()
     capacity = models.PositiveIntegerField()
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_events')
+    created_by = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        related_name='created_events'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
+
 
 class EventRegistration(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

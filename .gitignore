@@ -1,3 +1,5 @@
 venv/
 *.pages
 db.sqlite3
+*.pdf
+*.zip

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستندات API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="https://cdn.fontcdn.ir/Font/Persian/IranYekan.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'IranYekan', sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .table {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            vertical-align: middle !important;
+        }
+        .auth-yes {
+            color: green;
+            font-weight: bold;
+        }
+        .auth-no {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📌 مستندات Endpoint ها</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center align-middle">
+            <thead>
+                <tr>
+                    <th>مسیر</th>
+                    <th>متد</th>
+                    <th>توضیح</th>
+                    <th>نیاز به احراز هویت</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/accounts/register/</td>
+                    <td>POST</td>
+                    <td>ثبت‌نام کاربر</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/accounts/token/</td>
+                    <td>POST</td>
+                    <td>ورود و دریافت JWT</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/accounts/token/refresh/</td>
+                    <td>POST</td>
+                    <td>تازه‌سازی توکن JWT</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/accounts/me/profile/</td>
+                    <td>GET,PUT</td>
+                    <td>دریافت و تغییر پروفایل کاربر</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td> /api/accounts/users/&lt;id&gt;/</td>
+                    <td>GET</td>
+                    <td>دریافت جزئیات کاربر</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/news/</td>
+                    <td>GET</td>
+                    <td>لیست اخبار</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/news/create/</td>
+                    <td>POST</td>
+                    <td>ایجاد خبر</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/news/&lt;id&gt;/</td>
+                    <td>GET</td>
+                    <td>مشاهده جزئیات خبر</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/news/&lt;id&gt;/publish/</td>
+                    <td>POST</td>
+                    <td>انتشار خبر</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/events/</td>
+                    <td>GET</td>
+                    <td>لیست رویدادها</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/events/create/</td>
+                    <td>POST</td>
+                    <td>ایجاد رویداد</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/events/&lt;id&gt;/</td>
+                    <td>GET</td>
+                    <td>مشاهده جزئیات رویداد</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/events/&lt;id&gt;/register/</td>
+                    <td>POST</td>
+                    <td>ثبت‌نام در رویداد</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/articles/</td>
+                    <td>GET</td>
+                    <td>لیست مقالات</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/articles/create/</td>
+                    <td>POST</td>
+                    <td>ایجاد مقاله</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/articles/&lt;id&gt;/</td>
+                    <td>GET</td>
+                    <td>مشاهده جزئیات مقاله</td>
+                    <td class="auth-no">❌</td>
+                </tr>
+                <tr>
+                    <td>/api/articles/&lt;id&gt;/status/</td>
+                    <td>POST</td>
+                    <td>تغییر وضعیت مقاله</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/comments/write/</td>
+                    <td>POST</td>
+                    <td>ارسال نظر</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+                <tr>
+                    <td>/api/comments/delete/&lt;id&gt;/</td>
+                    <td>DELETE</td>
+                    <td>حذف نظر</td>
+                    <td class="auth-yes">✅</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

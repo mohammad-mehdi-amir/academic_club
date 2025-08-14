@@ -12,6 +12,11 @@ class User(AbstractUser):
         ('admin', 'مدیر انجمن'),
     )
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
+    def save(self, *args, **kwargs):
+       
+        if self.role == 'member':
+            self.is_staff = True
+        super().save(*args, **kwargs)
 
    
 class Profile(models.Model):
